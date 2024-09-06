@@ -1,0 +1,136 @@
+ /* Reset and Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Courier New', Courier, monospace;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: rgb(97, 94, 94);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* Card Container */
+.card {
+    width: 100%;
+    max-width: 450px;
+    background: linear-gradient(135deg, #306d7b, #5b548a);
+    color: #130808;
+    border-radius: 20px;
+    padding: 40px 30px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Search Section */
+.search {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.search input {
+    flex: 1;
+    padding: 15px 20px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    background: #ebfffc;
+    font-size: 18px;
+    color: #333;
+    transition: box-shadow 0.3s ease;
+    margin-right: 15px;
+}
+
+.search input:focus {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.search button {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: none;
+    background: #ebfffc;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search button:hover {
+    background: #d4fffa;
+}
+
+.search button img {
+    width: 24px;
+}
+
+/* Weather Icon */
+.weather-icon {
+    width: 80px;
+    margin: 20px auto;
+}
+
+/* Weather Info */
+.weather h1 {
+    font-size: 64px;
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.city {
+    font-size: 32px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+/* Details Section */
+.details {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+.col {
+    display: flex;
+    align-items: center;
+}
+
+.col img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+.humidity, .wind {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .card {
+        padding: 30px 20px;
+    }
+
+    .weather h1 {
+        font-size: 48px;
+    }
+
+    .city {
+        font-size: 28px;
+    }
+
+    .humidity, .wind {
+        font-size: 20px;
+    }
+
+    .search input {
+        font-size: 16px;
+    }
+}
