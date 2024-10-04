@@ -25,6 +25,21 @@ body {
     padding: 40px 30px;
     text-align: center;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    animation: cardPulse 3s infinite alternate;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.02);
+}
+
+@keyframes cardPulse {
+    0% {
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+    100% {
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    }
 }
 
 /* Search Section */
@@ -43,12 +58,13 @@ body {
     background: #ebfffc;
     font-size: 18px;
     color: #333;
-    transition: box-shadow 0.3s ease;
+    transition: all 0.3s ease;
     margin-right: 15px;
 }
 
 .search input:focus {
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
 .search button {
@@ -61,20 +77,33 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.3s ease;
 }
 
 .search button:hover {
     background: #d4fffa;
+    transform: rotate(15deg) scale(1.1);
 }
 
 .search button img {
     width: 24px;
+    transition: transform 0.3s ease;
+}
+
+.search button:hover img {
+    transform: scale(1.2);
 }
 
 /* Weather Icon */
 .weather-icon {
     width: 80px;
     margin: 20px auto;
+    animation: floatIcon 3s ease-in-out infinite;
+}
+
+@keyframes floatIcon {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
 }
 
 /* Weather Info */
@@ -82,12 +111,25 @@ body {
     font-size: 64px;
     font-weight: bold;
     margin: 10px 0;
+    animation: fadeInUp 1s ease;
 }
 
 .city {
     font-size: 32px;
     font-weight: 500;
     margin-bottom: 10px;
+    animation: fadeInUp 1s ease 0.2s backwards;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Details Section */
@@ -95,16 +137,33 @@ body {
     display: flex;
     justify-content: space-between;
     margin-top: 30px;
+    animation: fadeIn 1s ease 0.4s backwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 .col {
     display: flex;
     align-items: center;
+    transition: transform 0.3s ease;
+}
+
+.col:hover {
+    transform: scale(1.05);
 }
 
 .col img {
     width: 40px;
     margin-right: 10px;
+    animation: rotateIcon 10s linear infinite;
+}
+
+@keyframes rotateIcon {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
 
 .humidity, .wind {
